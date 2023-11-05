@@ -1,0 +1,9 @@
+.header__container {
+    display: flex;
+    height: 4rem;
+    background-color: var(--color-primary);
+    align-items: center;
+    h1{
+        margin-left: 10%;
+    }
+}

@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://economia.awesomeapi.com.br/json/",
+    baseURL: "https://cdn.moeda.info/api/bcb.json",
     timeout: 8000
 })

@@ -1,0 +1,16 @@
+:root {
+    --color-primary: #2A60DC;
+    --color-secondary: #562CDE;
+    --color-3: #14D4D4;
+    
+    --color-white: #e7eeff;
+
+    --grey-0: #8E9097;
+    --grey-1: #616368;
+    --grey-2: #3B3C3F;
+    --grey-3: #0C0D0E;
+}
+
+body{
+    background-color: var(--grey-3);
+}

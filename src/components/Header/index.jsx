@@ -1,7 +1,8 @@
+import styles from "./style.module.scss"
 export const Header = () => {
     return (
-        <header>
-            <h1>Currency converter</h1>
+        <header className={styles.header__container}>
+            <h1 className="title">Currency converter</h1>
         </header>
     )
 }
