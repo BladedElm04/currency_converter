@@ -3,25 +3,28 @@ import { Input } from "../Input"
 import { useContext } from "react"
 import { ConverterContext } from "../../../providers/ConverterContext"
 import styles from "./style.module.scss"
+import { US } from 'country-flag-icons/react/3x2'
 
 export const FormSection = () => {
 
-    const { converter } = useContext(ConverterContext)
+
+    const { converter, currencyType } = useContext(ConverterContext)
 
     const { register, handleSubmit } = useForm()
 
-    const submit = async(formData) => {
+    const submit = async (formData) => {
+        currencyType(formData)
         converter(formData)
     }
 
     return (
         <section>
-            <div>
+            <div className={styles.container}>
                 <form className={styles.form__container} onSubmit={handleSubmit(submit)}>
-                    <Input type="text" {...register("amount")}/>
+                    <Input  required placeholder="Coloque o valor aqui..." type="number" {...register("amount")} />
                     <div className={styles.select__container}>
                         <label className="headline" htmlFor="from">De:</label>
-                        <select  id="from" {...register("base1")}>
+                        <select id="from" {...register("base1")}>
                             <option value="USD">Dólar</option>
                             <option value="EUR">Euro</option>
                             <option value="GBP">Libra</option>

@@ -1,8 +1,17 @@
 .result__container {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     gap: 1.5rem;
     background-color: var(--grey-2);
     padding: 1rem;
+    border-radius: 0.5rem;
+
+    .value__container {
+        margin: auto;
+        span{
+            font-weight: 600;
+            font-size: 2rem;
+        }
+    }
 }

@@ -8,6 +8,12 @@ export const ConverterProvider = ({children}) => {
 
     const [converted, setConverted] = useState()
 
+    const [currency , setCurrency] = useState()
+
+
+    const currencyType = (formData) => {
+        setCurrency(formData.base2)
+    }
 
     const converter = async (formData) => {
         const base1 = formData.base1
@@ -17,18 +23,15 @@ export const ConverterProvider = ({children}) => {
             const { data } = await api.get()
             if(base1 === data.base) {
                 const result = (data.rates[base2]) * amount
-                setConverted(result.toFixed(3))
+                setConverted(result.toFixed(2))
             } else if(base1 !== data.base){
                 const result = (data.rates[base2]) / (data.rates[base1]) * amount
-                setConverted(result.toFixed(3))
+                setConverted(result.toFixed(2))
             }
-
         } catch (error) {
             console.log(error)
         }
     }
-
-
 
     useEffect(()=>{
         const clean = () => {
@@ -38,7 +41,7 @@ export const ConverterProvider = ({children}) => {
     }, [])
 
     return (
-        <ConverterContext.Provider value={{converter, setConverted, converted}}>
+        <ConverterContext.Provider value={{converter, setConverted, converted, currencyType, currency}}>
             {children}
         </ConverterContext.Provider>
     )
