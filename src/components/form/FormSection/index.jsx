@@ -3,7 +3,6 @@ import { Input } from "../Input"
 import { useContext } from "react"
 import { ConverterContext } from "../../../providers/ConverterContext"
 import styles from "./style.module.scss"
-import { US } from 'country-flag-icons/react/3x2'
 
 export const FormSection = () => {
 
